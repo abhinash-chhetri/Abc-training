@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Add course  {% endblock title %} 
+
+
+{% block content %} 
+    <h1 style ="text-align:center;">Add course</h1>
+    <div class ='container'>
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name= "title">
+            </div>
+            <div class="form-group">
+                <label for="price">price</label>
+                <input type="text" class="form-control" id="price" name= "price">
+            </div>
+            <div class="form-group">
+                <label for="description">description</label>
+                <input type="text" class="form-control" id="description" name=" description">
+            </div>
+            </div>
+            <div class=form-group>
+                <label for="level">level:</label>
+                <select name="level" id="level">
+                    <option value="B">Beginner</option>
+                    <option value="I">Intermediate</option>
+                    <option value="A">Advance</option>
+                </select>
+            </div>
+            
+        <button type="Text" class="btn btn-primary"> Add </button>
+            
+        </form>
+    </div>
+    
+{% endblock content %} 
