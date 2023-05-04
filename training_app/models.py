@@ -9,7 +9,7 @@ LEVEL = [
 class Course(models.Model):
     title = models.CharField(max_length=30)
     price =models.DecimalField(max_digits =8 ,decimal_places=0)
-    description = models.CharField(max_length =120)
+    description = models.CharField(max_length =120, blank = True, default ='NA')
     level =models.CharField(max_length=1, choices= LEVEL, default='Beginner')
 
     class Meta:
