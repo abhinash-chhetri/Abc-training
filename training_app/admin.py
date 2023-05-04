@@ -3,3 +3,4 @@ from training_app.models import *
 # Register your models here.
 admin.site.register(Upcomingclass)
 admin.site.register(Instructor)
+admin.site.register(Course)

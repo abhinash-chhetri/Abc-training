@@ -1,6 +1,23 @@
 from django.db import models
 from django.core.validators import MinLengthValidator , MaxLengthValidator
 # Create your models here.
+LEVEL = [
+    ("B", "Beginner"),
+    ("I", "Intermediate"),
+    ("A", "Advance"),
+]
+class Course(models.Model):
+    title = models.CharField(max_length=30)
+    price =models.DecimalField(max_digits =8 ,decimal_places=0)
+    description = models.CharField(max_length =120)
+    level =models.CharField(max_length=1, choices= LEVEL, default='Beginner')
+
+    class Meta:
+        db_table ='Course'
+
+    def __str__(self):
+        return f'{self.title}'
+    
 class Instructor(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length = 25)
