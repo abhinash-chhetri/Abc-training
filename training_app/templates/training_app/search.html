@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block content %} 
+    <center>
+    {% if searched %} 
+        <h1> {{python}}
+        <br>
+        {% for course in courses %}
+            {{course}}  <br>
+        {% endfor %}
+        </h1>
+    {% else %}
+        <h1> Your searched doesnot matched any key </h1>
+        
+    {% endif %}
+        
+    </center>
+    
+{% endblock content %} 

@@ -1,15 +1,18 @@
 from django.db import models
 from django.core.validators import MinLengthValidator , MaxLengthValidator, EmailValidator
+
 # Create your models here.
+
 LEVEL = [
     ("B", "Beginner"),
     ("I", "Intermediate"),
     ("A", "Advance"),
 ]
+
 class Course(models.Model):
     title = models.CharField(max_length=30)
-    price =models.DecimalField(max_digits =8 ,decimal_places=0)
-    description = models.TextField(null=True, blank = True, default ='NA')
+    price =models.DecimalField(max_digits =8 , decimal_places=0)
+    description = models.TextField(null=True, blank=True, default='NA')
     level =models.CharField(max_length=1, choices= LEVEL, default='Beginner')
 
     class Meta:
@@ -25,14 +28,14 @@ class Instructor(models.Model):
     phone = models.CharField(max_length =10, validators=[MinLengthValidator(limit_value=10)])
     qualifications = models.CharField(max_length=30)
     experience = models.PositiveSmallIntegerField()
-    email = models.EmailField(unique = True)
+    email = models.EmailField()
 
     def __str__(self):
         return f'{self.first_name}{self.last_name}'
     
     class Meta:
         db_table = 'Instructor'
-        verbose_name_plural = 'Instructors'
+        # verbose_name_plural = 'Instructors'
     
 
 
